@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who won Super Bowl XLIX?"
+        android:id="@+id/questionTextView"
+        android:textSize="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Miami Dolphins"
+        android:id="@+id/answerButton1"
+        android:layout_marginTop="25dp"
+        android:textSize="18dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seattle Seahawks"
+        android:id="@+id/answerButton2"
+        android:layout_marginTop="25dp"
+        android:textSize="18dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New England Patriots"
+        android:id="@+id/answerButton3"
+        android:layout_marginTop="25dp"
+        android:textSize="18dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green Bay Packers"
+        android:id="@+id/answerButton4"
+        android:layout_marginTop="25dp"
+        android:textSize="18dp"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

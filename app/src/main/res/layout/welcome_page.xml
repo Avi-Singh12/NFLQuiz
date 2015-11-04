@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/red">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome: "
         android:textSize="30dp"
+        android:textColor="@color/white"
         android:id="@+id/welcomeTextView"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current High Score: "
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:id="@+id/currentScoreTextView"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
+        android:text="Begin Quiz"
+        android:textSize="25dp"
+        android:id="@+id/beginQuizButton"
         android:layout_gravity="center_horizontal"
-        android: />
+        android:layout_marginTop="100dp" />
 </LinearLayout>

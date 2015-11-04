@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WelcomePage" />
+        <activity android:name=".ScorePage" />
+        <activity android:name=".QuizPage1" />
     </application>
 
 </manifest>
