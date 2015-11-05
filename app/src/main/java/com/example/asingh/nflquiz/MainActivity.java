@@ -14,6 +14,7 @@ import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -42,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUserOnFirebase(userNameTextField.getText().toString(), passwordTextField.getText().toString(), myFirebase);
-                Intent i = new Intent(getApplicationContext(), WelcomePage.class);
-                i.putExtra("USER_NAME", userNameTextField.getText().toString());
-                startActivity(i);
             }
         });
     };
@@ -107,11 +105,24 @@ public class MainActivity extends AppCompatActivity {
        });
    }
 
-    public void loginUserOnFirebase(final String username, String password, Firebase myFirebase) {
+    public void loginUserOnFirebase(final String username, final String password, Firebase myFirebase) {
         myFirebase.authWithPassword(username, password, new Firebase.AuthResultHandler() {
             @Override
             public void onAuthenticated(AuthData authData) {
                 Toast.makeText(MainActivity.this, "New user with id: " + username + " successfully logged in",Toast.LENGTH_SHORT).show();
+
+                Firebase rootRef = new Firebase("https://nflquizavi.firebaseio.com/data");
+                String userID = authData.getUid();
+
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("displayName", username);
+                map.put("password", password);
+                rootRef.child("users").child(userID).setValue(map);
+
+                Intent i = new Intent(getApplicationContext(), WelcomePage.class);
+                i.putExtra("USER_NAME", username);
+                i.putExtra("USER_ID", userID);
+                startActivity(i);
             }
 
             @Override

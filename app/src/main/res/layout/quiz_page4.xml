@@ -5,12 +5,12 @@
     android:background="@color/gray">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="329dp"
         android:layout_height="wrap_content"
-        android:text="Who won Super Bowl XLIX?"
+        android:text="Which team is currently not undefeated?"
         android:id="@+id/questionTextView"
-        android:textColor="@color/red"
         android:textSize="25dp"
+        android:textColor="@color/red"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:layout_gravity="center_horizontal" />
@@ -18,7 +18,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Miami Dolphins"
+        android:text="Denver Broncos"
         android:id="@+id/answerButton1"
         android:layout_marginTop="25dp"
         android:textSize="18dp"
@@ -28,7 +28,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seattle Seahawks"
+        android:text="Cincinnati Bengals"
         android:id="@+id/answerButton2"
         android:layout_marginTop="25dp"
         android:textSize="18dp"

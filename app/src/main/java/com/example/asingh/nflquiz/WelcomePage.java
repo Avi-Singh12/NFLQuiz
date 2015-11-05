@@ -14,6 +14,7 @@ public class WelcomePage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.welcome_page);
 
         Bundle extras = getIntent().getExtras();
         final String username = extras.getString("USER_NAME");

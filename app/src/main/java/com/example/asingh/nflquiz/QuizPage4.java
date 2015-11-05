@@ -10,11 +10,11 @@ import android.widget.Toast;
 /**
  * Created by 2016asingh on 11/4/2015.
  */
-public class QuizPage1 extends Activity {
+public class QuizPage4 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.quiz_page1);
+        setContentView(R.layout.quiz_page4);
 
         Bundle extras = getIntent().getExtras();
         final String username = extras.getString("USER_NAME");
@@ -24,8 +24,8 @@ public class QuizPage1 extends Activity {
         answerButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(QuizPage1.this, "Incorrect", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), QuizPage2.class);
+                Toast.makeText(QuizPage4.this, "Incorrect", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore);
                 startActivity(i);
@@ -36,8 +36,8 @@ public class QuizPage1 extends Activity {
         answerButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(QuizPage1.this, "Incorrect", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), QuizPage2.class);
+                Toast.makeText(QuizPage4.this, "Incorrect", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore);
                 startActivity(i);
@@ -48,10 +48,10 @@ public class QuizPage1 extends Activity {
         answerButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(QuizPage1.this, "Correct", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), QuizPage2.class);
+                Toast.makeText(QuizPage4.this, "Incorrect", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
-                i.putExtra("NEW_SCORE", newScore + 1);
+                i.putExtra("NEW_SCORE", newScore);
                 startActivity(i);
             }
         });
@@ -60,10 +60,10 @@ public class QuizPage1 extends Activity {
         answerButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(QuizPage1.this, "Incorrect", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getApplicationContext(), QuizPage2.class);
+                Toast.makeText(QuizPage4.this, "Correct", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
-                i.putExtra("NEW_SCORE", newScore);
+                i.putExtra("NEW_SCORE", newScore + 1);
                 startActivity(i);
             }
         });

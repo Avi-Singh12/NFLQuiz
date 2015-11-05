@@ -12,6 +12,7 @@ public class ScorePage extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.score_page);
 
         Bundle extras = getIntent().getExtras();
         String username = extras.getString("USER_NAME");

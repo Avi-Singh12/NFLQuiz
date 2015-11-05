@@ -19,6 +19,10 @@
         <activity android:name=".WelcomePage" />
         <activity android:name=".ScorePage" />
         <activity android:name=".QuizPage1" />
+        <activity android:name=".QuizPage2" />
+        <activity android:name=".QuizPage3" />
+        <activity android:name=".QuizPage4" />
+        <activity android:name=".QuizPage5" />
     </application>
 
 </manifest>
