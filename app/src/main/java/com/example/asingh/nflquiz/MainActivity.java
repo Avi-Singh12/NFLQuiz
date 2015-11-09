@@ -1,6 +1,7 @@
 package com.example.asingh.nflquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         final Button createAccountButton = (Button) findViewById(R.id.createAccountButton);
         Button loginButton = (Button) findViewById(R.id.loginButton);
 
+        SharedPreferences scoreSP = getApplicationContext().getSharedPreferences("ScoreSP", 0);
+        final SharedPreferences.Editor editor = scoreSP.edit();
+        final Integer allTimeHighScore = scoreSP.getInt("highScore",0);
+
+
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUserOnFirebase(userNameTextField.getText().toString(), passwordTextField.getText().toString(), myFirebase);
+                loginUserOnFirebase(userNameTextField.getText().toString(), passwordTextField.getText().toString(), myFirebase, allTimeHighScore);
             }
         });
     };
@@ -105,23 +111,23 @@ public class MainActivity extends AppCompatActivity {
        });
    }
 
-    public void loginUserOnFirebase(final String username, final String password, Firebase myFirebase) {
+    public void loginUserOnFirebase(final String username, final String password, Firebase myFirebase, final Integer allTimeHighScore) {
         myFirebase.authWithPassword(username, password, new Firebase.AuthResultHandler() {
             @Override
             public void onAuthenticated(AuthData authData) {
                 Toast.makeText(MainActivity.this, "New user with id: " + username + " successfully logged in",Toast.LENGTH_SHORT).show();
 
-                Firebase rootRef = new Firebase("https://nflquizavi.firebaseio.com/data");
-                String userID = authData.getUid();
+//                Firebase rootRef = new Firebase("https://nflquizavi.firebaseio.com/data");
+//                String userID = authData.getUid();
 
-                Map<String, String> map = new HashMap<String, String>();
-                map.put("displayName", username);
-                map.put("password", password);
-                rootRef.child("users").child(userID).setValue(map);
+//                Map<String, String> map = new HashMap<String, String>();
+//                map.put("displayName", username);
+//                map.put("password", password);
+//                rootRef.child("users").child(userID).setValue(map);
 
                 Intent i = new Intent(getApplicationContext(), WelcomePage.class);
                 i.putExtra("USER_NAME", username);
-                i.putExtra("USER_ID", userID);
+                i.putExtra("HIGH_SCORE", allTimeHighScore);
                 startActivity(i);
             }
 

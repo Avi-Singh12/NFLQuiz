@@ -19,6 +19,7 @@ public class QuizPage4 extends Activity {
         Bundle extras = getIntent().getExtras();
         final String username = extras.getString("USER_NAME");
         final Integer newScore = extras.getInt("NEW_SCORE");
+        final Integer highScore = extras.getInt("HIGH_SCORE");
 
         Button answerButton1 = (Button) findViewById(R.id.answerButton1);
         answerButton1.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +29,7 @@ public class QuizPage4 extends Activity {
                 Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore);
+                i.putExtra("HIGH_SCORE", highScore);
                 startActivity(i);
             }
         });
@@ -40,6 +42,7 @@ public class QuizPage4 extends Activity {
                 Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore);
+                i.putExtra("HIGH_SCORE", highScore);
                 startActivity(i);
             }
         });
@@ -52,6 +55,7 @@ public class QuizPage4 extends Activity {
                 Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore);
+                i.putExtra("HIGH_SCORE", highScore);
                 startActivity(i);
             }
         });
@@ -64,6 +68,7 @@ public class QuizPage4 extends Activity {
                 Intent i = new Intent(getApplicationContext(), QuizPage5.class);
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore + 1);
+                i.putExtra("HIGH_SCORE", highScore);
                 startActivity(i);
             }
         });

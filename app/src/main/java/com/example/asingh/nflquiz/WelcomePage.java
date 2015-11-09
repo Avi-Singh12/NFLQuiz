@@ -18,6 +18,7 @@ public class WelcomePage extends Activity {
 
         Bundle extras = getIntent().getExtras();
         final String username = extras.getString("USER_NAME");
+        final Integer highScore = extras.getInt("HIGH_SCORE");
 
         final Integer newScore = 0;
 
@@ -33,6 +34,7 @@ public class WelcomePage extends Activity {
                 Intent i = new Intent(getApplicationContext(), QuizPage1.class);
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore);
+                i.putExtra("HIGH_SCORE", highScore);
                 startActivity(i);
             }
         });
