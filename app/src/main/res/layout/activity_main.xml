@@ -58,7 +58,7 @@
         android:id="@+id/usernameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
+        android:text="Username*"
         android:textSize="18dp"
         android:textAlignment="center"
         android:background="@color/white"
@@ -105,5 +105,16 @@
         android:layout_alignBottom="@+id/nflLogo"
         android:layout_toEndOf="@+id/nflLogo"
         android:layout_marginBottom="26dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="*Note: in form of an email"
+        android:id="@+id/starTextView"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

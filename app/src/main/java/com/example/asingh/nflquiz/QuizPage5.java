@@ -47,7 +47,7 @@ public class QuizPage5 extends Activity {
             }
         });
 
-        Button answerButton3 = (Button) findViewById(R.id.answerButton2);
+        Button answerButton3 = (Button) findViewById(R.id.answerButton3);
         answerButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class QuizPage5 extends Activity {
         });
 
         Button answerButton4 = (Button) findViewById(R.id.answerButton4);
-        answerButton1.setOnClickListener(new View.OnClickListener() {
+        answerButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(QuizPage5.this, "Incorrect", Toast.LENGTH_SHORT).show();

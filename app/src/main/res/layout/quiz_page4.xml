@@ -18,7 +18,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Denver Broncos"
+        android:text="Carolina Panthers"
         android:id="@+id/answerButton1"
         android:layout_marginTop="25dp"
         android:textSize="18dp"

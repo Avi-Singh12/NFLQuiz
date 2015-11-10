@@ -25,7 +25,8 @@ public class WelcomePage extends Activity {
         TextView welcomeTextView = (TextView) findViewById(R.id.welcomeTextView);
         welcomeTextView.setText("Welcome: " + username);
 
-        TextView currentScoreTextView = (TextView) findViewById(R.id.currentScoreTextView);
+        TextView currentHighScoreTextView = (TextView) findViewById(R.id.currentHighScoreTextView);
+        currentHighScoreTextView.setText("Current High Score:" + highScore);
 
         Button beginQuizButton = (Button) findViewById(R.id.beginQuizButton);
         beginQuizButton.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +36,15 @@ public class WelcomePage extends Activity {
                 i.putExtra("USER_NAME", username);
                 i.putExtra("NEW_SCORE", newScore);
                 i.putExtra("HIGH_SCORE", highScore);
+                startActivity(i);
+            }
+        });
+
+        Button logoutButton = (Button) findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
             }
         });

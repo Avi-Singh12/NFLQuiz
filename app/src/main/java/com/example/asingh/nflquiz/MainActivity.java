@@ -31,10 +31,9 @@ public class MainActivity extends AppCompatActivity {
         final EditText userNameTextField = (EditText) findViewById(R.id.userNameTextView);
         final EditText passwordTextField = (EditText) findViewById(R.id.passwordTextView);
         final Button createAccountButton = (Button) findViewById(R.id.createAccountButton);
-        Button loginButton = (Button) findViewById(R.id.loginButton);
+        final Button loginButton = (Button) findViewById(R.id.loginButton);
 
         SharedPreferences scoreSP = getApplicationContext().getSharedPreferences("ScoreSP", 0);
-        final SharedPreferences.Editor editor = scoreSP.edit();
         final Integer allTimeHighScore = scoreSP.getInt("highScore",0);
 
 
@@ -89,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                        Toast.makeText(MainActivity.this, "Email Already in System", Toast.LENGTH_SHORT).show();
                        break;
                    case FirebaseError.INVALID_EMAIL:
-                       Toast.makeText(MainActivity.this, "Email Email or Password", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(MainActivity.this, "Invalid Email or Password", Toast.LENGTH_SHORT).show();
                        break;
                    case FirebaseError.INVALID_PASSWORD:
                        Toast.makeText(MainActivity.this, "Invalid Email or Password", Toast.LENGTH_SHORT).show();
@@ -135,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthenticationError(FirebaseError firebaseError) {
                 switch (firebaseError.getCode()) {
                     case FirebaseError.INVALID_EMAIL:
-                        Toast.makeText(MainActivity.this, "Email Email or Password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Invalid Email or Password", Toast.LENGTH_SHORT).show();
                         break;
                     case FirebaseError.USER_DOES_NOT_EXIST:
                         Toast.makeText(MainActivity.this, "User not in System", Toast.LENGTH_SHORT).show();
