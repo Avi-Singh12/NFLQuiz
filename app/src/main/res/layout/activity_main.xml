@@ -110,11 +110,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="*Note: in form of an email"
+        android:text="*In form of an email"
         android:id="@+id/starTextView"
         android:background="@color/white"
         android:padding="5dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        android:id="@+id/rememberMeCheckBox"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:background="@color/gray"
+        android:padding="5dp"/>
 
 </RelativeLayout>
